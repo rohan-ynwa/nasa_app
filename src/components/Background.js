@@ -1,5 +1,5 @@
 import React from 'react';
-import starvid from './stars.webm';
+import starvid from './starry.webm';
 import starvid2 from './starry.mp4';
 import starimg from './starry.png';
 
