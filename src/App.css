@@ -9,6 +9,10 @@ video {
   -webkit-transform: translate3d(0,0,0);
 }
 
+video::-webkit-media-controls {
+  display: none;
+}
+
 .navbar {
   width: 100vw;
   height: 12vh;
@@ -38,7 +42,7 @@ video {
 }
 
 .card-wrapper {
-  margin-top: 5vh;
+  margin-top: 1vh;
   position: relative;
   width: 60vw;
   height: 60vh;
@@ -119,9 +123,26 @@ video {
 button {
   background-color: rgba(0, 0, 0, 0);
   color: rgba(255, 255, 255, 0.452);
-  font-size: larger;
-  font-weight: bolder;
+  font-size: 1rem;
   border: none;
+  font-style: italic;
+}
+
+.button-wrapper {
+  margin-bottom: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-wrapper.click {
+  animation: underline 1s;
+  animation-fill-mode: forwards;
+}
+
+.button-wrapper.click-back {
+  animation: underline-back 1s;
+  animation-fill-mode: forwards;
 }
 
 button.click {
@@ -132,3 +153,28 @@ button:hover {
   color: white;
 }
 
+@keyframes underline {
+  from {
+    width: 5rem;
+  }
+
+  to {
+    border-bottom: 1px solid rgb(255, 255, 255);
+    width: 20vw;
+  }
+}
+
+@keyframes underline-back {
+  from {
+    border-bottom: 1px solid rgb(255, 255, 255);
+    width: 20vw;
+  }
+
+  to {
+    width: 5rem;
+  }
+}
+
+.arrow {
+  color: white;
+}

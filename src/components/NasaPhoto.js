@@ -28,11 +28,13 @@ function NasaPhoto() {
     
     
   return (
-      <div className="content-container">
-        <button onClick = {animate} className = {scrollDown ? "click" : null}> info </button>
-        <div className="card-wrapper">
+      <div className ="content-container">
+        <div className = {scrollDown ? "button-wrapper click" : "button-wrapper click-back"}>
+          <button onClick = {animate} className = {scrollDown ? "click" : null}> about </button>
+        </div>
+        <div className = "card-wrapper">
             <div className = {scrollDown ? "card scroll" : "card scroll-back"}>
-              <div className="nasa-photo">
+              <div className ="nasa-photo">
                   {photoInfo.media_type === "image" ? (
                       <img
                       src={photoInfo.url}
