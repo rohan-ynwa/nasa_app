@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
-html {
-  background-color: black;
-}
-
 video {
+  background-color: black;
   object-fit: cover;
   width: 100vw;
   height: 100vh;
