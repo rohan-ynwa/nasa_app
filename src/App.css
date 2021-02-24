@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 video {
   object-fit: cover;
   width: 100vw;
@@ -15,16 +17,25 @@ video::-webkit-media-controls {
 
 .navbar {
   width: 100vw;
-  height: 12vh;
+  height: 15vh;
   border-bottom: 1px solid rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1vh, 0vh;
 }
 
-.navbar-content {
+.navbar-text {
   color: rgb(255, 255, 255);
-  font-size: x-large;
+  font-size: calc(0.9vw + 18px);
+}
+
+.nasa {
+  font-weight: lighter;
+}
+
+.apod {
+  font-family: 'Orbitron', sans-serif;
 }
 
 .nasa-photo {
@@ -126,6 +137,8 @@ button {
   font-size: 1rem;
   border: none;
   font-style: italic;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: lighter;
 }
 
 .button-wrapper {
@@ -178,3 +191,26 @@ button:hover {
 .arrow {
   color: white;
 }
+
+.orbit {
+  height: auto;
+  max-height: 10vh;
+  z-index: -1;
+  object-fit: cover;
+  position: fixed;
+  align-self: center;
+}
+
+.rotate {
+  animation: spin 3s forwards;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
+

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import env from "./env.json"
 
 function NasaPhoto() {
-  console.log(env.nasaKey);  
   const [scrollDown, setScrollDown] = useState(false);
   const animate = () => {
     setScrollDown(prevCheck => !prevCheck);
