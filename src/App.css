@@ -6,6 +6,7 @@ video {
   top: 0;
   left: 0;
   z-index: -2;
+  -webkit-transform: translate3d(0,0,0);
 }
 
 .navbar {
@@ -24,10 +25,9 @@ video {
 
 .nasa-photo {
   width: 60vw;
-  z-index: 2;
 }
 
-.media-container {
+.content-container {
   position: fixed;
   height: 80vh;
   width: 100vw;
@@ -49,8 +49,17 @@ video {
 }
 
 .card {
-  width: 120vw;
+  width: 60vw;
   height: 60vh;
+}
+
+.nasa-photo {
+  width: 60vw;
+  height: 60vh;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nasa-photo iframe {
@@ -59,7 +68,6 @@ video {
 }
 
 .nasa-photo img {
-  width: 60vw;
   height: 60vh;
 }
 
@@ -100,7 +108,7 @@ video {
 
 @keyframes scroll-back{
   from {
-    transform:  translateY(-60vh);
+    transform: translateY(-60vh);
   }
 
   to {
@@ -123,3 +131,4 @@ button.click {
 button:hover {
   color: white;
 }
+

@@ -28,31 +28,31 @@ function NasaPhoto() {
     
     
   return (
-      <div className="media-container">
+      <div className="content-container">
         <button onClick = {animate} className = {scrollDown ? "click" : null}> info </button>
         <div className="card-wrapper">
             <div className = {scrollDown ? "card scroll" : "card scroll-back"}>
-                <div className="nasa-photo">
-                    {photoInfo.media_type === "image" ? (
-                        <img
-                        src={photoInfo.url}
-                        alt={photoInfo.title}
-                        />
-                        ) : (
-                        <iframe
-                        title="space-video"
-                        src={photoInfo.url}
-                        frameBorder="0"
-                        gesture="media"
-                        allowFullScreen
-                        />
-                    )}
-                </div>
-                <div className="photo-info">
-                    <h1>{photoInfo.title}</h1>
-                    <p className="date">{photoInfo.date}</p>
-                    <p className="explanation">{photoInfo.explanation}</p>
-                </div>
+              <div className="nasa-photo">
+                  {photoInfo.media_type === "image" ? (
+                      <img
+                      src={photoInfo.url}
+                      alt={photoInfo.title}
+                      />
+                      ) : (
+                      <iframe
+                      title="space-video"
+                      src={photoInfo.url}
+                      frameBorder="0"
+                      gesture="media"
+                      allowFullScreen
+                      />
+                  )}
+              </div>
+              <div className="photo-info">
+                  <h1>{photoInfo.title}</h1>
+                  <p className="date">{photoInfo.date}</p>
+                  <p className="explanation">{photoInfo.explanation}</p>
+              </div>
             </div>
         </div>                
       </div>
