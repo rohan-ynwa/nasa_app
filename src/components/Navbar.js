@@ -19,7 +19,7 @@ function NavBar() {
                 <span className = "nasa">NASA</span> 
                 <span className = "apod"> | <b>APOD</b></span>
             </div>
-            <img src = {orbit} className = {expand ? "orbit rotate" : "orbit"}></img>
+            <img src = {orbit} alt="orbit logo" className = {expand ? "orbit rotate" : "orbit"}></img>
         </div>
     )
 }
