@@ -1,38 +1,125 @@
-.App {
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.navbar {
+  width: 100vw;
+  height: 12vh;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-content {
+  color: rgb(255, 255, 255);
+  font-size: x-large;
+}
+
+.nasa-photo {
+  width: 60vw;
+  z-index: 2;
+}
+
+.media-container {
+  position: fixed;
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-wrapper {
+  margin-top: 5vh;
+  position: relative;
+  width: 60vw;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card {
+  width: 120vw;
+  height: 60vh;
+}
+
+.nasa-photo iframe {
+  width: 60vw;
+  height: 60vh;
+}
+
+.nasa-photo img {
+  width: 60vw;
+  height: 60vh;
+}
+
+.photo-info {
+  color: rgb(255, 255, 255);
   text-align: center;
+  width: 60vw;
+  height: 60vh;
+  overflow-y: scroll;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.photo-info::-webkit-scrollbar {
+  width: 1px;
+  background: transparent; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.photo-info::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+
+.card.scroll {
+  animation: scroll 1s forwards;
+}
+
+.card.scroll-back{
+  animation: scroll-back 1s forwards;
+}
+
+@keyframes scroll{
+  from {
+    transform:  translateY(0vh);
+  }
+
+  to {
+    transform: translateY(-60vh);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+@keyframes scroll-back{
+  from {
+    transform:  translateY(-60vh);
+  }
+
+  to {
+    transform: translateY(0vh);
+  }
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(255, 255, 255, 0.452);
+  font-size: larger;
+  font-weight: bolder;
+  border: none;
+}
+
+button.click {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  color: white;
 }
