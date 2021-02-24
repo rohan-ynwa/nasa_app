@@ -2,9 +2,20 @@ import React, { useEffect, useState } from "react";
 import env from "./env.json"
 
 function NasaPhoto() {
+
   const [scrollDown, setScrollDown] = useState(false);
+  const [scrollUp, setScrollUp] = useState(false);
+
   const animate = () => {
-    setScrollDown(prevCheck => !prevCheck);
+    //check if in on load condition
+    if (scrollDown === false && scrollUp === false) {
+      setScrollDown(prevCheck => !prevCheck);
+    }
+    //toggle both states
+    else {
+      setScrollDown(prevCheck => !prevCheck);
+      setScrollUp(prevCheck => !prevCheck);
+    }
   }
 
   const[photoInfo, setPhotoInfo] = useState(null);
@@ -25,14 +36,13 @@ function NasaPhoto() {
     return <div />;
   } 
     
-    
   return (
       <div className ="content-container">
-        <div className = {scrollDown ? "button-wrapper click" : "button-wrapper click-back"}>
+        <div className = {scrollDown ? "button-wrapper click" : (scrollUp ? "button-wrapper click-back" : "button-wrapper")}>
           <button onClick = {animate} className = {scrollDown ? "click" : null}> about </button>
         </div>
         <div className = "card-wrapper">
-            <div className = {scrollDown ? "card scroll" : "card scroll-back"}>
+            <div className = {scrollDown ? "card scroll" : (scrollUp ? "card scroll-back" : "card")}>
               <div className ="nasa-photo">
                   {photoInfo.media_type === "image" ? (
                       <img

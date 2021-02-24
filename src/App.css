@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
+html {
+  background-color: black;
+}
+
 video {
   object-fit: cover;
   width: 100vw;
@@ -22,7 +26,15 @@ video::-webkit-media-controls {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1vh, 0vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.navbar-wrapper-content{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-text {
@@ -197,8 +209,8 @@ button:hover {
   max-height: 10vh;
   z-index: -1;
   object-fit: cover;
-  position: fixed;
   align-self: center;
+  position: fixed;
 }
 
 .rotate {
