@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import env from "./env.json"
 
 function NasaPhoto() {
+
+  const apiKey = process.env.REACT_APP_NASA_API;
 
   const [scrollDown, setScrollDown] = useState(false);
   const [scrollUp, setScrollUp] = useState(false);
@@ -26,7 +27,7 @@ function NasaPhoto() {
 
   async function getPhoto() {
     const res = await fetch(
-        `https://api.nasa.gov/planetary/apod?api_key=${env.nasaKey}`
+        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
     )
     const info = await res.json();
     setPhotoInfo(info);
