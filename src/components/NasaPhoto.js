@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 
 function NasaPhoto() {
 
-  const apiKey = process.env.REACT_APP_NASA_API;
-
   const [scrollDown, setScrollDown] = useState(false);
   const [scrollUp, setScrollUp] = useState(false);
 
@@ -22,16 +20,17 @@ function NasaPhoto() {
   const[photoInfo, setPhotoInfo] = useState(null);
 
   useEffect(() => {
-      getPhoto();
+    async function getPhoto() {
+      const res = await fetch(
+          `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_API}`
+      )
+      const info = await res.json();
+      setPhotoInfo(info);
+    }
+    
+    getPhoto();
   }, []);
 
-  async function getPhoto() {
-    const res = await fetch(
-        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
-    )
-    const info = await res.json();
-    setPhotoInfo(info);
-  }
 
   if (!photoInfo) {
     return <div />;
