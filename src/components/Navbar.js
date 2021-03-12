@@ -3,17 +3,17 @@ import orbit from "./animation.png"
 
 function NavBar() {
     const [expand, setExpand] = useState(false);
-    const [first, setFirst] = useState(true);
 
     const animate = () => {
-        setFirst(false);
-        if (!expand === true) {
+        if (expand === false) {
             setExpand(true);
             setTimeout(() => {
                 setExpand(false)
             }, 3000);
         }
     }
+
+    React.useEffect(() => animate(), [])
 
     return (
         <div className = "navbar">
@@ -22,7 +22,7 @@ function NavBar() {
                     <span className = "nasa">NASA</span> 
                     <span className = "apod"> | <b>APOD</b></span>
                 </div>
-                <img src = {orbit} alt="orbit logo" className = {expand ? "orbit rotate" : first ? "orbit rotate" : "orbit"}></img>
+                <img src = {orbit} alt="orbit logo" className = {expand ? "orbit rotate" : "orbit"}></img>
             </div>
         </div>
     )
